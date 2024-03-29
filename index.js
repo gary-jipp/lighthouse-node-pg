@@ -19,7 +19,12 @@ const connectionString = "postgres://labber:labber@localhost/midterm";
 // client.query("select * from users")
 //   .then(data => {
 //     console.log(data.rows);
+//     client.end()
 //   });
+
+// Can't put this here!
+// client.end()
+
 
 const pool = new pg.Pool(config);
 // const pool = new pg.Pool({connectionString});
@@ -27,5 +32,7 @@ const pool = new pg.Pool(config);
 // No "connect()" needed for a pool - auto-connect & timeout
 pool.query("select * from users")
   .then(data => {
-    console.log(data.rows);
+    // console.log(data.rows);  // We  care about rows. array
+    console.log(data);    // node pg object. Note: `_` items, don't touch/use
+    pool.end();
   });
