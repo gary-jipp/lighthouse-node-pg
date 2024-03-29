@@ -7,6 +7,8 @@ const config = {
   password: "labber",
 };
 
+// Can also use a connection string
+const connectionString = "postgres://labber:labber@localhost/midterm";
 
 // What happens if we don't provide a config
 // const client = new pg.Client(config);
@@ -20,9 +22,6 @@ const config = {
 //   });
 
 const pool = new pg.Pool(config);
-
-// Can also use a connection string
-const connectionString = "postgres://labber:labber@localhost/midterm";
 // const pool = new pg.Pool({connectionString});
 
 // No "connect()" needed for a pool - auto-connect & timeout
