@@ -12,6 +12,7 @@ const queries = {
 };
 
 const sql = queries[method];
+console.log(sql);
 if (!sql) {
   return console.log("Invalid method");
 }
