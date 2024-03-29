@@ -51,7 +51,7 @@ const pool = new pg.Pool(config);
 // No "connect()" needed for a pool - auto-connect & timeout
 pool.query("select * from users");
 
-pool.query(queries[method])
+pool.query(sql)
   .then(data => {
     console.log(data.rows);  // We  care about rows. array
     // console.log(data);    // node pg object. Note: `_` items, don't touch/use
