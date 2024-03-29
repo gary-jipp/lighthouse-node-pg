@@ -1,3 +1,21 @@
+const args = process.argv.slice(2);
+const method = args[0];
+if (!method) {
+  return console.log("No method provided");
+}
+
+const id = args[1];
+
+const queries = {
+  "all": "select * from users",
+  "show": `select * from users where id=${id}`,
+};
+
+const sql = queries[method];
+if (!sql) {
+  return console.log("Invalid method");
+}
+
 const pg = require("pg");
 const config = {
   host: "localhost",   // default: localhost
@@ -30,9 +48,11 @@ const pool = new pg.Pool(config);
 // const pool = new pg.Pool({connectionString});
 
 // No "connect()" needed for a pool - auto-connect & timeout
-pool.query("select * from users")
+pool.query("select * from users");
+
+pool.query(queries[method])
   .then(data => {
-    // console.log(data.rows);  // We  care about rows. array
-    console.log(data);    // node pg object. Note: `_` items, don't touch/use
+    console.log(data.rows);  // We  care about rows. array
+    // console.log(data);    // node pg object. Note: `_` items, don't touch/use
     pool.end();
   });
