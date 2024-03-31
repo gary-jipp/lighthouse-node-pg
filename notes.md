@@ -1,18 +1,26 @@
 # SQL from our Apps
 
-## Express App
+## secrets - Environment variables
 
-- install express and morgan as usual
-- lets install `nodemon` as dev dep also to save restarts
-- create a `server.js` for our express app
-- add a `start` script to our `package.json`
-- start and test.  We get "not found" = working!
+- we wouldn't want to hard code usernames and passwords into our app
+- anyone could see them in GitHub if the code was public
+- These are called "secrets" and they should be secret
+- to do this we use environment variables
+- they are variables in the OS (eg: linux)
+- for example:   use the `env` command in linux
+- in node REPL:  `process.env`  whill show this
+- we can use the environment in our app
+- they are set using linux `export` or in the startup files
+- can also be set temporarily:   `A_NEW_VAL=123 node`
 
-- add some stub endpoints.  Just the GET's for today to keep it simple
-- we will add the config and pool to our Express App
-- add the query to our `get` route
-- very important.  no `pool.end` !!
+- example:  PORT can be a variable with a default
+- `PORT=8001 npm start`
+- we can do the same with host, username & password, etc
+- but difficult to type all these on the command line
+- instead we can use a package: `dotenv`
+- makes this easy
 
-- we can return json. This is very common and its called an "API"
-- one important convention.  If the endpoint returns json, its `/api/<something>`
-- this is a convention you should follow!  `/api` = json.  Not `/api` = content
+- install dotenv
+- create an `.env` file & add secrets
+- `require("dotenv").config();`  as 1st line
+- remove secrets from code and replace with env variables
