@@ -59,6 +59,18 @@ switch (method) {
       });
     break;
 
+    // We can even create tables with pg
+  case "create":
+    pool.query(`CREATE TABLE users2 (
+      id SERIAL PRIMARY KEY NOT NULL,
+      name VARCHAR(30) NOT NULL,
+      email VARCHAR(30) NOT NULL)`)
+      .then(data => {
+        console.log(data.rows);
+        pool.end();
+      });
+    break;
+
   default:
     console.log("No method provided");
     break;
