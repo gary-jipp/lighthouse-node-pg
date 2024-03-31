@@ -1,22 +1,37 @@
 # SQL from our Apps
 
-- Today we will complete the cycle of "full stack development"
-- We have Developed FE apps and BE apps
-- Now we will learn to write database applications
+## Initialize project
 
-- Lets create a new database and add some seed data
-- we can use a program `psql` to talk to postgres
-- Important to know that `psql` is NOT postgres.
-- `psql` is just a client program.
-- postgres is a database engine (RDBMS) : server
-- not to be confused with ROUS's :)
+- initialize the package `npm init -y`
+- create a .gitignore file to avoid adding node_modules!
+- install node postgres package `pg`
+- https://node-postgres.com/
 
-- So we can use psql to create our database and add data
-- If start psql with no parameters it assumes current user as database
-- `psql: error: FATAL:  database "labber" does not exist`
-- you may have seen this already. Use `template1` database (always there)
-- `psql template1`
-- create a new database, import schema and seeds: `users` table
+- install pg: `npm install pg`
+- create a file `index.js`
 
-- we can also use psql to interact with the database: select, insert, etc
-- our first task wil be to create our own CLI postgres client programs
+- first thing is we import (require) `pg`
+- then decide how we want to connect to our database
+- two choices:  Client or Pool
+- https://node-postgres.com/features/connecting
+- Clients are a single connection
+- Pools are several connections. More as needed
+- With a Client you have to `connect`.
+- Pool is auto-connecting, but has more overhead
+- With Web Apps you will usually use Pools, so we will here
+- They are used identically
+
+- The most common way to Create a Pool/Client is with a Config object
+- Config contains: host, port, user, database, password.
+- Or can use a single `connectionString` : contains all those.
+
+- demo create Client & create Pool
+- Once we have created our Pool or Client we can use it
+- we use the `query()` method to perform operations
+- create a query to fetch all the users
+- returns a promise:  `data` object . we use `data.rows`
+
+- notice we get back an array of object. pg translates the table for us
+- also, the program does not terminate.
+- with a client, it waits forever, with a pool about 10 seconds
+- we can use `end()` to close the connection. Never in a Web App!!
