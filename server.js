@@ -5,10 +5,10 @@ const pg = require("pg");
 const morgan = require('morgan');
 
 const config = {
-  host: "localhost",
-  database: "mydb",
-  user: "labber",
-  password: "labber",
+  host: process.env.DBHOST,
+  database: process.env.DBNAME,
+  user: process.env.DBUSER,
+  password: process.env.DBPASS,
 };
 const pool = new pg.Pool(config);
 
