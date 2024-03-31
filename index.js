@@ -42,7 +42,7 @@ switch (method) {
     break;
 
   case "edit":
-    const insertName = args[2];
+    const insertName = args[1];
     const insertEmail = args[2];
     const insertSql = 'insert into users(name, email) values ($1, $2)';
     pool.query(insertSql, [insertName, insertEmail])
