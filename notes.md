@@ -26,11 +26,12 @@
 - default values in config
 - Or can use a single `connectionString` : contains all those.
 
-- demo create Client & create Pool using `new` (Class)
+- create Client & create Pool using `new` (Class)
 - Once we have created our Pool or Client we can use it
 - we use the `query()` method to perform operations
 - create a query to fetch all the users
 - returns a promise:  `data` object . we use `data.rows`
+- can use a callback but Promise is easier
 
 - notice we get back an array of object. pg translates the table for us
 - also, the program does not terminate.
