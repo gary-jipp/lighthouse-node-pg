@@ -36,7 +36,6 @@ switch (method) {
     const updateSql = 'update users set name=$1 where id=$2';
     pool.query(updateSql, [updateName, id])
       .then(data => {
-        console.log(data.rows);
         pool.end();
       });
     break;
