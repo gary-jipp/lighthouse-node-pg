@@ -10,7 +10,7 @@
 - SQL Injection attack. Most common attack
 - Still many programs vulnerable to this
 - list all users, reset passwords.  All sorts of mischief!
-- How do we protect against this? Parameterized  Queries
+- How do we protect against this? "Parameterized Queries"
 - not to be confused with "Prepared Statements" which is something very different
 
 - instead of using template literals, we pass the variables as an array
@@ -19,4 +19,4 @@
 - this looks a little like EJS templateVars
 - this guarantees a String variable is always used as a String and not parsed as SQL
 - now the attack fails
-- These are called "Prepared Statements" and its not unique to Postgres.
+- "Parameterized Queries" are not unique to Postgres.
