@@ -18,6 +18,7 @@
 
 - we can even `create` tables using pg.
 - can we create a database?  yes!
+- notice, we cannot use $ 
 
 - What we have done is created an "abstraction layer" around SQL
 - we have simplified access to the database. No sql knowledge needed
