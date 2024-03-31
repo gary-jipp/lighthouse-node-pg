@@ -30,10 +30,22 @@ switch (method) {
       });
 
     break;
+
   case "edit":
-    const name = args[2];
-    const sql = 'update users set name=$1 where id=$2';
-    pool.query(sql, [name, id])
+    const updateName = args[2];
+    const updateSql = 'update users set name=$1 where id=$2';
+    pool.query(updateSql, [updateName, id])
+      .then(data => {
+        console.log(data.rows);  // only need 1st item
+        pool.end();
+      });
+    break;
+
+  case "edit":
+    const insertName = args[2];
+    const insertEmail = args[2];
+    const insertSql = 'insert into users(name, email) values ($1, $2)';
+    pool.query(insertSql, [insertName, insertEmail])
       .then(data => {
         console.log(data.rows);  // only need 1st item
         pool.end();
