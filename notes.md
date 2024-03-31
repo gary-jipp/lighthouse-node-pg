@@ -11,6 +11,8 @@
 - deleting a row is the easiest.  All we need is the ID
 - `delete from table`. a `where` is critical here now
 
+- `returning` also works with add inserts, deletes
+
 - if we delete a row and add another.  What `id` will it get?
 - it never re-uses id's.  Never backfill auto incrementing numbers
 
