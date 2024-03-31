@@ -1,5 +1,5 @@
 const pg = require("pg");
-const args = process.args.slice(2)
+const args = process.argv.slice(2)
 
 const config = {
   user: "labber",      //default:  username
