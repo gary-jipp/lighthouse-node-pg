@@ -14,5 +14,5 @@
 - very important.  no `pool.end` !!
 
 - we can return json. This is very common and its called an "API"
-- one important convention.  If the endpoint returns JSON, its `/api/<something>`
-- this is a convention you should follow!  /api = json.  Not /api = content
+- one important convention.  If the endpoint returns json, its `/api/<something>`
+- this is a convention you should follow!  `/api` = json.  Not `/api` = content
