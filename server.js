@@ -3,6 +3,7 @@ const pg = require("pg");
 const morgan = require('morgan');
 
 const config = {
+  host: "localhost",
   database: "mydb",
   user: "labber",
   password: "labber",
