@@ -1,14 +1,13 @@
 # SQL from our Apps
 
-## Initialize project
+## Prepared Statements
 
-- Now we have a prorgam that will fetch all records
-- lets add more functionality: Fetch a single record
-- we will need to specify the function on the command line
-- we can use `process.argv`
-- several ways to do this.  We will use a `switch`
-- add `all` and `show` for two functions
-- handle missing parameters gracefully
-- With `show` we only need a single record. use rows[0]
+- We would never write pg code using string templates for params
+- This is vulnerable to SQL injection attacks
 
-- We would never write pg code this way! Its very Insecure
+- example:  `node index.js "show 2;drop table users"`
+- this destroys the users table
+- SQL Injection attack. Most common attack
+- Still many programs vulnerable to this
+- list all users, reset passwords.  All sorts of mischief!
+- How do we protect against this?  Prepared Statements

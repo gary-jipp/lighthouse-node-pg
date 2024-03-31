@@ -1,9 +1,9 @@
 const pg = require("pg");
-const args = process.argv.slice(2)
+const args = process.argv.slice(2);
 
 const config = {
-  user: "labber",      //default:  username
-  database: "midterm", // default: username
+  database: "mydb",
+  user: "labber",
   password: "labber",
 };
 
