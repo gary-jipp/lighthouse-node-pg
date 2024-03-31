@@ -11,3 +11,10 @@
 - Still many programs vulnerable to this
 - list all users, reset passwords.  All sorts of mischief!
 - How do we protect against this?  Prepared Statements
+
+- instead of using template literals, we pass the variables as an array
+- 2nd parameter to `query()`
+- and use placeholders for them in the query: $1, $2 (note: not $0)
+- this guarantees a String variable is always used as a String and not parsed as SQL
+- now the attack fails
+- These are called "Prepared Statements" and its not unique to Postgres.

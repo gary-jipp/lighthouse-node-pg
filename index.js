@@ -22,7 +22,7 @@ switch (method) {
 
   case "show":
     const id = args[1];
-    pool.query(`select * from users where id=${id}`)
+    pool.query('select * from users where id=$1', [id])
       .then(data => {
         console.log(data.rows[0]);  // only need 1st item
         pool.end();
