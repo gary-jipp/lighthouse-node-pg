@@ -5,6 +5,6 @@
 - [ ] Create a CLI application using `node-postgres` (pg)
 - [ ] SQl Injection & how to prevent
 - [ ] Express & pg together: Writing a web "API"
-- [ ] Using environment variables - dotenv
+- [ ] Protecting Secrets with environment variables & dotenv
 
 ## Content
