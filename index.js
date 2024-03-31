@@ -4,7 +4,7 @@ const pg = require("pg");
 const config = {
   host: "localhost",   // default: localhost
   port: 5432,          // default: 5432 (optional)
-  database: "midterm", // default: username
+  database: "mydb", // default: username
   user: "labber",      //default:  username
   password: "labber",
 };
