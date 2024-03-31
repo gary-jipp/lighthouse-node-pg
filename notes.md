@@ -10,7 +10,8 @@
 - SQL Injection attack. Most common attack
 - Still many programs vulnerable to this
 - list all users, reset passwords.  All sorts of mischief!
-- How do we protect against this?  Prepared Statements
+- How do we protect against this? Parameterized  Queries
+- not to be confused with "Prepared Statements" which is something very different
 
 - instead of using template literals, we pass the variables as an array
 - 2nd parameter to `query()`
