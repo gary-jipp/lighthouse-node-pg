@@ -16,5 +16,8 @@
 - if we delete a row and add another.  What `id` will it get?
 - it never re-uses id's.  Never backfill auto incrementing numbers
 
+- we can even `create` tables using pg.
+- can we create a database?  yes!
+
 - What we have done is created an "abstraction layer" around SQL
 - we have simplified access to the database. No sql knowledge needed
