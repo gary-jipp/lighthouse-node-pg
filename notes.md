@@ -1,21 +1,22 @@
 # SQL from our Apps
 
-## Prepared Statements
+## Update Row
 
-- We would never write pg code using string templates for params
-- This is vulnerable to SQL injection attacks
+- We have created 2 functions:  browse (all) and read (show)
+- lets create an "edit" function
+- need the `id` and a new `name` for a user
+- need a new `case` for `edit`
+- move the `id` outside the `switch`
+- get `name` from args
 
-- example:  `node index.js "show 2;drop table users"`
-- this destroys the users table
-- SQL Injection attack. Most common attack
-- Still many programs vulnerable to this
-- list all users, reset passwords.  All sorts of mischief!
-- How do we protect against this?  Prepared Statements
+- `update` syntax for SQL. Always have a `where`
+- $1 and $2 order is not important, as long as they match the array
+- can also create an `sql` string
+- run our edit with "Bobby" for a name and log `result.rows`
+- `result.rows` comes back empty.  Its ALWAYS an array
+- updates generally do not return data.
+- but no error (no catch), so that means it was sucessful
+- notice the order changes.  There is no intrinsic order to records
+- can add `order by id` to ensure an order
 
-- instead of using template literals, we pass the variables as an array
-- 2nd parameter to `query()`
-- and use placeholders for them in the query: $1, $2 (note: not $0)
-- this looks a little like EJS templateVars
-- this guarantees a String variable is always used as a String and not parsed as SQL
-- now the attack fails
-- These are called "Prepared Statements" and its not unique to Postgres.
+
