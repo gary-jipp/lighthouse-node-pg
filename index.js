@@ -33,7 +33,7 @@ switch (method) {
 
   case "edit":
     const updateName = args[2];
-    const updateSql = 'update users set name=$1 where id=$2';
+    const updateSql = 'update users set name=$1 where id=$2 returning *';
     pool.query(updateSql, [updateName, id])
       .then(data => {
         pool.end();
@@ -43,7 +43,7 @@ switch (method) {
   case "add":
     const insertName = args[1];
     const insertEmail = args[2];
-    const insertSql = 'insert into users(name, email) values ($1, $2)';
+    const insertSql = 'insert into users(name, email) values ($1, $2) returning *';
     pool.query(insertSql, [insertName, insertEmail])
       .then(data => {
         console.log(data.rows);  //
@@ -52,7 +52,7 @@ switch (method) {
     break;
 
   case "delete":
-    pool.query('delete from users where id=$1', [id])
+    pool.query('delete from users where id=$1 returning *', [id])
       .then(data => {
         console.log(data.rows);
         pool.end();
