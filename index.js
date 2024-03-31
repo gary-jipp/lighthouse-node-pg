@@ -8,7 +8,6 @@ const config = {
 };
 
 const pool = new pg.Pool(config);
-// const pool = new pg.Pool({connectionString});
 
 const method = args[0];
 switch (method) {
