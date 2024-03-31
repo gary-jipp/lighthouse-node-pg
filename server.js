@@ -7,9 +7,7 @@ const config = {
   user: "labber",
   password: "labber",
 };
-
 const pool = new pg.Pool(config);
-
 
 const app = express();
 const port = process.env.PORT || 8000;
