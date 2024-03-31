@@ -21,6 +21,6 @@
 - makes this easy
 
 - install dotenv
-- create an `.env` file & add secrets
+- create an `.env` file & add secrets.  Add to .gitignore!!
 - `require("dotenv").config();`  as 1st line
 - remove secrets from code and replace with env variables
