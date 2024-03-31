@@ -16,7 +16,7 @@
 - `psql: error: FATAL:  database "labber" does not exist`
 - you may have seen this already. Use `template1` database (always there)
 - `psql template1`
-- create a new database, import schema and seeds: `users` table
+- create a new `mydb` database, import schema and seeds: `users` table
 
 - we can also use psql to interact with the database: select, insert, etc
 - our first task wil be to create our own CLI postgres client programs
