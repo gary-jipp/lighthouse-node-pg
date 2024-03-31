@@ -30,10 +30,11 @@ switch (method) {
       });
 
     break;
+
   case "edit":
-    const name = args[2];
-    const sql = 'update users set name=$1 where id=$2';
-    pool.query(sql, [name, id])
+    const updateName = args[2];
+    const updateSql = 'update users set name=$1 where id=$2';
+    pool.query(updateSql, [updateName, id])
       .then(data => {
         console.log(data.rows);  // only need 1st item
         pool.end();
