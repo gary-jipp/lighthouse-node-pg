@@ -58,13 +58,24 @@ switch (method) {
         pool.end();
       });
     break;
-
-    // We can even create tables with pg
+    
+  // We can even create tables with pg
   case "create":
-    pool.query(`CREATE TABLE users2 (
-      id SERIAL PRIMARY KEY NOT NULL,
-      name VARCHAR(30) NOT NULL,
-      email VARCHAR(30) NOT NULL)`)
+    const tableName = args[1];
+    pool.query(`CREATE TABLE ${tableName} (
+        id SERIAL PRIMARY KEY NOT NULL,
+        name VARCHAR(30) NOT NULL,
+        email VARCHAR(30) NOT NULL)`)
+      .then(data => {
+        console.log(data.rows);
+        pool.end();
+      });
+    break;
+
+  // We can even create a database
+  case "createdb":
+    const dbName = args[1];
+    pool.query(`CREATE database ${dbName}`)
       .then(data => {
         console.log(data.rows);
         pool.end();
