@@ -9,13 +9,14 @@ const config = {
   password: "labber",
 };
 
-// Can also use a connection string
-const connectionString = "postgres://labber:labber@localhost/midterm";
-
 // What happens if we don't provide a config
 // const client = new pg.Client();
 
 const client = new pg.Client(config);
+
+// Can also use a connection string
+const connectionString = "postgres://labber:labber@localhost/midterm";
+const client2 = new pg.Client({connectionString});
 
 // Client requires a connect first. no timeout
 client.connect();

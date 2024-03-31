@@ -23,9 +23,10 @@
 
 - The most common way to Create a Pool/Client is with a Config object
 - Config contains: host, port, user, database, password.
+- default values in config
 - Or can use a single `connectionString` : contains all those.
 
-- demo create Client & create Pool
+- demo create Client & create Pool using `new` (Class)
 - Once we have created our Pool or Client we can use it
 - we use the `query()` method to perform operations
 - create a query to fetch all the users
