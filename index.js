@@ -17,7 +17,7 @@ switch (method) {
   case "all":
     pool.query('select * from users order by id')
       .then(data => {
-        console.log(data.rows);  // We  care about rows. array
+        console.log(data.rows);
         pool.end();
       });
     break;
@@ -25,7 +25,7 @@ switch (method) {
   case "show":
     pool.query('select * from users where id=$1', [id])
       .then(data => {
-        console.log(data.rows[0]);  // only need 1st item
+        console.log(data.rows[0]);
         pool.end();
       });
 
@@ -36,18 +36,26 @@ switch (method) {
     const updateSql = 'update users set name=$1 where id=$2';
     pool.query(updateSql, [updateName, id])
       .then(data => {
-        console.log(data.rows);  // only need 1st item
+        console.log(data.rows);
         pool.end();
       });
     break;
 
-  case "edit":
+  case "add":
     const insertName = args[1];
     const insertEmail = args[2];
     const insertSql = 'insert into users(name, email) values ($1, $2)';
     pool.query(insertSql, [insertName, insertEmail])
       .then(data => {
-        console.log(data.rows);  // only need 1st item
+        console.log(data.rows);  //
+        pool.end();
+      });
+    break;
+
+  case "delete":
+    pool.query('delete from users where id=$1', [id])
+      .then(data => {
+        console.log(data.rows);
         pool.end();
       });
     break;
