@@ -1,11 +1,11 @@
 # SQL from our Apps
 
-## Prepared Statements
+## Parameterized Queries
 
 - We would never write pg code using string templates for params
 - This is vulnerable to SQL injection attacks
 
-- example:  `node index.js "show 2;drop table users"`
+- example:  `node index.js show "2;drop table users"`
 - this destroys the users table
 - SQL Injection attack. Most common attack
 - Still many programs vulnerable to this
