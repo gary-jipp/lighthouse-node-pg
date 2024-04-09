@@ -16,6 +16,7 @@
 - instead of using template literals, we pass the variables as an array
 - 2nd parameter to `query()`
 - and use placeholders for them in the query: $1, $2 (note: not $0)
+- Believe it or not, before "C", arrays in many languages started with 1, not 0
 - this looks a little like EJS templateVars
 - this guarantees a String variable is always used as a String and not parsed as SQL
 - now the attack fails
